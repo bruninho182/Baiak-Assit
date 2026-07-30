@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Baiak Helper",
+  "version": "2.0",
+  "description": "Venda automática para Baiak Idle",
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": ["https://baiakidle.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://baiakidle.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "128": "icon128.png"
+  }
+}
